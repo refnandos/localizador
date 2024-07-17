@@ -1,0 +1,164 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000 url(background.jpg) repeat center fixed; 
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    width:100%;
+    overflow:hidden;
+    padding: 190px;
+    background-image:url(img/eddy_gordo.jpg) ;
+    background-attachment: fixed;
+    background-position: top center;
+
+    
+}
+header h2{
+    font-size: 500%;
+    color: rgb(247, 12, 63);
+}
+
+nav{
+    
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    background-color: #333 ;
+    
+}
+
+
+.box{
+    flex: auto;
+    text-align: center;
+    padding:   10px; 
+    position: relative;
+
+}
+
+nav a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    
+}
+
+.box:hover {
+    padding: 8px;
+    border: #ffffff solid 2px;
+    position: relative;
+
+}
+nav :hover{
+    
+    color: black;
+    background-color: aqua;
+}
+
+nav /*a:*/:hover::before{
+    transform: scale(1, 0.5);
+    
+}
+
+nav /*a:*/:before{
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    left: /*0px*/ 25%;
+    width: 50%;
+    height: 10%;
+    background: #fc0909;
+    transform-origin: center;
+    transform: scale(0, 1);
+    transition: transform 1s cubic-bezier(1, 0, 0, 1)
+}
+
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+aside{
+    flex: 30%  ;
+    color: #1e90ff;
+    background-color: #1d1d1a;
+    padding: 20px;
+    overflow: auto;
+    overflow: auto hidden;
+    border-color: #1e90ff ;
+    
+}
+aside ::-webkit-scrollbar {
+    display: none;
+}
+img.middle {
+    vertical-align: middle;
+    width: 12px;
+    height: 18px;
+  }
+
+ol li a{
+    text-decoration: none;
+    color: #2deded;
+}
+
+section{
+    flex: 70%;
+    color: #2deded;
+  background-color: #000000;
+    padding: 20px;
+}
+ footer{
+    display: flex;
+    padding-right: 5%;
+    justify-content: flex-end;
+    color: aliceblue;
+    background: #000 url(background.jpg) repeat center fixed; 
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+
+}
+
+@media screen and (max-width: 700px) {
+    nav, .row{
+        flex-direction: column;
+    }
+    
+}
+
+/************************/
+@keyframes reveal {
+	from {
+		opacity: 0;
+		clip-path: inset(45% 20% 45% 20%);
+        
+	}
+	to {
+		opacity: 1;
+		clip-path: inset(0% 0% 0% 0%);
+        
+	}
+}
+
+.revealing-image {
+	/* Create View Timeline */
+	view-timeline-name: --revealing-image;
+	view-timeline-axis: block;
+
+	/* Attach animation, linked to the  View Timeline */
+	animation: linear reveal both;
+	animation-timeline: --revealing-image;
+
+	/* Tweak range when effect should run*/
+	animation-range: entry 25% cover 50%;
+}
+/************************/
