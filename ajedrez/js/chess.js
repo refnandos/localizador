@@ -1,8 +1,8 @@
 var colores = new Array("white", "black");
 
 function tablero () {
-    var numfilas =  8 ; //document.getElementById("numfilas").value;
-    var numcolumnas = 8; //document.getElementById("numcolumnas").value;
+    var numfilas =  document.getElementById("numfilas").value;
+    var numcolumnas = document.getElementById("numcolumnas").value;
     var contenedortabla = document.getElementById("contenedor");
 
     contenedortabla.innerHTML = "";
